@@ -1,11 +1,11 @@
 :root {
   /* colors */
-  --primary-color: #dfdfe2;
+  --primary-color: #b3b3b3;
   --secondary-color: #ffffff;
-  --app-background-color: #4d4d62;
-  --background-color: #1b1b32;
-  --foreground-color: #3b3b4f;
-  --highlight-color: #f1be32;
+  --app-background-color: #535353;
+  --background-color: #121212;
+  --foreground-color: #212121;
+  --highlight-color: #1db954;
 
   /* font sizes */
   --root-font-size: 16px;
@@ -20,6 +20,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  border-radius: 2%;
 }
 
 body {
@@ -87,7 +88,7 @@ ul {
 .parallel-lines > div {
   height: 2px;
   width: 100%;
-  min-width: 75px;
+  min-width: 70px;
   background-color: var(--highlight-color);
 }
 
@@ -116,6 +117,7 @@ ul {
 #player-album-art img {
   width: 150px;
   display: block;
+  border-radius: 0;
 }
 
 .player-display {
@@ -124,7 +126,7 @@ ul {
   row-gap: 20px;
   padding: 14px;
   background-color: var(--background-color);
-  height: 153px;
+  height: 162px;
   width: 226px;
 }
 
@@ -165,8 +167,8 @@ button {
 
 button:focus,
 .playlist-song:focus {
-  outline-style: dashed;
-  outline-width: 2px;
+  outline-style: hidden;
+  outline-width: 1px;
 }
 
 /* Playlist */
@@ -237,6 +239,8 @@ button:focus,
   font-size: 0.85rem;
   width: 241px;
   text-align: left;
+  color: var(--secondary-color);
+  font-family: var(--font-headline);
 }
 
 .playlist-song-artist {
@@ -249,6 +253,7 @@ button:focus,
   margin: auto;
   font-family: var(--font-headline);
   width: 30px;
+  color: var(--highlight-color);
 }
 
 .playlist-song-delete {
@@ -366,4 +371,11 @@ button:focus,
     justify-content: space-between;
     text-align: center;
   }
+}
+
+#reset {
+  padding: 1rem;
+  margin: 0 10px;
+  color: var(--secondary-color);
+  font-family: var(--font-headline);
 }
