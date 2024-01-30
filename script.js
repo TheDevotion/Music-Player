@@ -5,9 +5,6 @@ const nextButton = document.getElementById("next");
 const previousButton = document.getElementById("previous");
 const shuffleButton = document.getElementById("shuffle");
 
-// timer logic:
-const timer = document.getElementById("timer");
-
 const allSongs = [
   {
     id: 0,
@@ -182,12 +179,20 @@ const deleteSong = (id) => {
 const setPlayerDisplay = () => {
   const playingSong = document.getElementById("player-song-title");
   const songArtist = document.getElementById("player-song-artist");
+
   const currentTitle = userData?.currentSong?.title;
   const currentArtist = userData?.currentSong?.artist;
 
   playingSong.textContent = currentTitle ? currentTitle : "";
   songArtist.textContent = currentArtist ? currentArtist : "";
+
+  // timer logic:
+  const timer = document.getElementById("timer");
+  const currentSongDuration = userData?.currentSong?.duration;
+  timer.textContent = currentSongDuration ? currentSongDuration : "";
 };
+
+const displayTimer = () => {};
 
 const highlightCurrentSong = () => {
   const playlistSongElements = document.querySelectorAll(".playlist-song");
